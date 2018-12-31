@@ -1,9 +1,9 @@
 /**
   ******************************************************************************
   * @file    main.c
-  * @author  Ac6
+  * @author  P. Foubet
   * @version V1.0
-  * @date    01-December-2013
+  * @date    31-December-2018
   * @brief   Default main function.
   ******************************************************************************
 */
@@ -34,31 +34,15 @@ void vLedsRouge(void* p)
 
 int main(void)
 {
-int i;
   interface_init();
 
 
 
-  /* test des leds */
-  /*
-  for (i=0; i<10000; i++) {
-      BSP_LED_Toggle(LED3);
-      osDelay(200);
-  }
-  for (i=0; i<10000; i++) {
-      BSP_LED_Toggle(LED4);
-      osDelay(200);
-  }
-  */
+  if (!(pdPASS == xTaskCreate( vLedsVerte, (signed char*) "LedVerte",64,NULL,1,NULL ))) goto err;
+  if (!(pdPASS == xTaskCreate( vLedsRouge, (signed char*) "LedRouge",64,NULL,2,NULL ))) goto err;
 
-  if (!(pdPASS == xTaskCreate( vLedsVerte, (signed char*) "LedVerte",64,NULL,1,NULL ))) goto hell;
-  if (!(pdPASS == xTaskCreate( vLedsRouge, (signed char*) "LedRouge",64,NULL,2,NULL ))) goto hell;
-  /*
-   *
-  if (!(pdPASS == xTaskCreate( vPrintUart, (signed char*) "Uart",    64,NULL,3,NULL ))) goto hell;
-   */
   vTaskStartScheduler();
-hell:              // should never be reached
+err:              // should never be reached
   while(1);
   return 0;
 }
