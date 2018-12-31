@@ -16,9 +16,9 @@ void vLedsVerte(void* p)
 {
  while(1){
   BSP_LED_On(LED3);
-  vTaskDelay(120/portTICK_RATE_MS);
+  vTaskDelay(300/portTICK_RATE_MS);
   BSP_LED_Off(LED3);
-  vTaskDelay(120/portTICK_RATE_MS);
+  vTaskDelay(300/portTICK_RATE_MS);
  }
 }
 
@@ -26,23 +26,24 @@ void vLedsRouge(void* p)
 {
  while(1){
   BSP_LED_On(LED4);
-  vTaskDelay(301/portTICK_RATE_MS);
+  vTaskDelay(100/portTICK_RATE_MS);
   BSP_LED_Off(LED4);
-  vTaskDelay(301/portTICK_RATE_MS);
+  vTaskDelay(100/portTICK_RATE_MS);
  }
 }
 
 int main(void)
 {
+char *Nom1="LedVerte", *Nom2="LedRouge";
   interface_init();
 
+  /* creation des threads */
+  if (!(pdPASS == xTaskCreate( vLedsVerte, Nom1, 64, NULL,1,NULL ))) goto err;
+  if (!(pdPASS == xTaskCreate( vLedsRouge, Nom2, 64, NULL,configMAX_PRIORITIES-1,NULL ))) goto err;
 
-
-  if (!(pdPASS == xTaskCreate( vLedsVerte, (signed char*) "LedVerte",64,NULL,1,NULL ))) goto err;
-  if (!(pdPASS == xTaskCreate( vLedsRouge, (signed char*) "LedRouge",64,NULL,2,NULL ))) goto err;
-
+  /* lancement du systeme */
   vTaskStartScheduler();
-err:              // should never be reached
+err:              // en principe jamais atteint !
   while(1);
   return 0;
 }

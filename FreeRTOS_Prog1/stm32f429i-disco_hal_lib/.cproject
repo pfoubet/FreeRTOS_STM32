@@ -58,8 +58,6 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Utilities/Fonts&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Utilities/Log&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Utilities/STM32F429I-Discovery&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Middlewares/ST/STemWin/Config&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Middlewares/ST/STemWin/inc&quot;"/>
 								</option>
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.1490478989" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="STM32F429ZITx"/>
@@ -107,17 +105,12 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Utilities/Fonts&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Utilities/Log&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Utilities/STM32F429I-Discovery&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Middlewares/ST/STemWin/Config&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Middlewares/ST/STemWin/inc&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1159701480" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.assembler.input.588930937" superClass="fr.ac6.managedbuild.tool.gnu.cross.assembler.input"/>
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<sourceEntries>
-						<entry excluding="Middlewares/ST/STemWin/Simulation|Utilities/Fonts" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
-					</sourceEntries>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
