@@ -50,7 +50,7 @@ endif
 all: FreeRTOS_GraphEx.elf
 
 dependents:
-	-cd /home/invite/workspace/New_GraphEx/stm32f429i-disco_hal_lib/Release && $(MAKE) clean all
+	-cd /home/invite/workspace/New_GraphEx/stm32f429i-disco_hal_lib/Release && $(MAKE) all
 
 # Tool invocations
 FreeRTOS_GraphEx.elf: $(OBJS) $(USER_OBJS) /home/invite/workspace/New_GraphEx/stm32f429i-disco_hal_lib/Release/libstm32f429i-disco_hal_lib.a

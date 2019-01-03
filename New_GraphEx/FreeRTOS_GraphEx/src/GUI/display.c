@@ -29,6 +29,7 @@ We appreciate your understanding and fairness.
 ----------------------------------------------------------------------
 File        : ideas and base code from demo file: GUIDEMO_Graph.c
 ----------------------------------------------------------------------
+Modification P. Foubet 31/12/2018
 */
 
 
@@ -99,8 +100,6 @@ GRAPH_SCALE_Handle _hScaleH, _hScaleV;
 static int         _DataAdjust;
 
 
-
-
 /*********************************************************************
 *
 *       _ShowGraph
@@ -139,8 +138,6 @@ static void _ShowGraph(GRAPH_Handle hGraph, GRAPH_DATA_Handle hData[], int DataC
         if (DataCount == 0) DataCount=4;
         Flag=1;
     }
-
-
 
     if (1==1)  {
       for (i = 0; i < DataCount; i++)
@@ -182,6 +179,13 @@ void drawBk(void)
   GUI_SetBkColor(BK_COLOR_1);
   GUI_Clear();
   GUI_DrawBitmap(&bmESIEA_logo, 10, 10);
+}
+
+void drawBk2(void)
+{
+  GUI_SetBkColor(BK_COLOR_2);
+  GUI_Clear();
+  GUI_DrawBitmap(&bmESIEA_logo, 155, 3);
 }
 
 
@@ -273,6 +277,7 @@ static void _DisplayGraph(void) {
   GRAPH_SetGridDistX(hGraph, GRID_DIST_X);
   GRAPH_SetGridDistY(hGraph, GRID_DIST_Y);
   WM_BringToBottom  (hGraph);
+
   //
   // Create and configure GRAPH_DATA_YT object
   //
@@ -325,11 +330,20 @@ static void _DisplayGraph(void) {
 */
 void display(void)
 {
-	enableTrig=1;
-	clearData=0;
+   enableTrig=1;
+   clearData=0;
    _hGraphDialog=CreateGraphDlg();
    _DisplayGraph();
 }
+
+void display2(void)
+{
+	enableTrig=1;
+	clearData=0;
+    drawBk2();
+}
+
+
 
 
 

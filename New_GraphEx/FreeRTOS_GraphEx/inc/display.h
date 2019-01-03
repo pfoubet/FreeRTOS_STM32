@@ -105,6 +105,7 @@ extern "C" {     /* Make sure we have C-declarations in C++ programs */
 
 #define BK_COLOR_0        0xFF5555
 #define BK_COLOR_1        0xC80088
+#define BK_COLOR_2        0x789078
 
 #define NUMBYTES_NEEDED   0x200000
 
@@ -127,7 +128,7 @@ void clearGraph(void);
 void setTrig(int enable);
 void graph(void);
 void display(void);
-
+void display2(void);
 
 /*********************************************************************
 *
